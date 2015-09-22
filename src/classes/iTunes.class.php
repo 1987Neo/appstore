@@ -15,7 +15,7 @@ class iTunes extends spCurl
 	}
 	
 	public $guid = '00000000.11111111.22222222.44444444.88888888.00000000.11111111';
-	public $apple_id = '';
+	public $apple_id =np '';
 	public $password = '';
 	
 	protected $dsid = '';
@@ -26,7 +26,7 @@ class iTunes extends spCurl
 	{
 		$login_url = "https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/authenticate";
 		$login_referer = 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?id=25204&mt=8&s=143441&pillIdentifier=iphone';
-		$login_post = 'matchineName=LOCALHOST&why=signin&attempt=1&createSession=true&guid='.urlencode($this->guid);
+		$login_post = 'matchineName=LOCALHOST&why=signin&attempt=1&ccreateSession=true&guid='.urlencode($this->guid);
 		$login_post .= '&appleId='.urlencode($this->apple_id).'&password='.urlencode($this->password);
 
 		$this->http_add_header('Content-Type', 'application/x-apple-plist');
